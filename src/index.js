@@ -1,3 +1,4 @@
+/* eslint-disable newline-before-return */
 /* ДЗ 1 - Функции */
 
 /*
@@ -6,6 +7,7 @@
  Функция должна принимать один аргумент и возвращать его
  */
 function returnFirstArgument(arg) {
+    return arg;
 }
 
 /*
@@ -15,6 +17,11 @@ function returnFirstArgument(arg) {
  Значение по умолчанию второго аргумента должно быть 100
  */
 function defaultParameterValue(a, b) {
+    if (b === undefined) {
+        b = 100;
+    }
+
+    return a + b;
 }
 
 /*
@@ -24,7 +31,16 @@ function defaultParameterValue(a, b) {
  Количество переданных аргументов заранее неизвестно
  */
 function returnArgumentsArray() {
+    var mass = [];
+
+    for (let i = 0; i < arguments.length ; i++) {
+        mass[i] = '' + arguments[i];
+    }
+
+    return mass;
 }
+
+// returnArgumentsArray(5, 7, 9);
 
 /*
  Задание 4:
@@ -32,6 +48,7 @@ function returnArgumentsArray() {
  Функция должна принимать другую функцию и возвращать результат вызова переданной функции
  */
 function returnFnResult(fn) {
+    return fn();
 }
 
 /*
