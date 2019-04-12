@@ -31,16 +31,14 @@ function defaultParameterValue(a, b) {
  Количество переданных аргументов заранее неизвестно
  */
 function returnArgumentsArray() {
-    var mass = [];
+    let mass = [];
 
-    for (let i = 0; i < arguments.length ; i++) {
-        mass[i] = '' + arguments[i];
+    for (let i = 0; i < arguments.length; i++) {
+        mass[i] = arguments[i];
     }
 
     return mass;
 }
-
-// returnArgumentsArray(5, 7, 9);
 
 /*
  Задание 4:
@@ -58,6 +56,13 @@ function returnFnResult(fn) {
  При вызове F, переданное число должно быть увеличено на единицу и возвращено из F
  */
 function returnCounter(number) {
+    function f() {
+        if (number === undefined) {
+            number = 0;
+        }
+        return number += 1;
+    }
+    return f;
 }
 
 /*
@@ -66,7 +71,7 @@ function returnCounter(number) {
  Функция должна принимать другую функцию (F) и некоторое количество дополнительных аргументов
  Функция должна привязать переданные аргументы к функции F и вернуть получившуюся функцию
  */
-function bindFunction(fn) {
+function bindFunction(fn, add1, add2) {
 }
 
 export {
@@ -77,3 +82,4 @@ export {
     returnCounter,
     bindFunction
 }
+
